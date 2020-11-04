@@ -13,7 +13,7 @@
 <nav class="header_nav sticky">
 
     <div class="hnav_element hnav_logo"><span style="color: #444345; background-color: white;">Car</span>Rental</div>
-    <div class="hnav_element hnav4"><a href="#" class="header_link"><?php echo $sql_user_name_result["Imie"]; ?></a></div>
+    <div class="hnav_element hnav4"><a href="scripts/logout-exe.php" class="header_link"><?php echo $sql_user_name_result["Imie"]; ?></a></div>
             <!--<span class="hnav_element_m">+</span>-->
 
 </nav>

@@ -53,7 +53,7 @@ include("scripts/header.php");
                 $klimatyzacja = "Nie posiada";
 
 
-                /*if(isset($_SESSION["kom"]))
+                if(isset($_SESSION["kom"]) && !empty($_SESSION["kom"]))
                 {
                     if($_SESSION["kom"] == 1)
                     {
@@ -84,7 +84,7 @@ include("scripts/header.php");
                        <?php
                     }
                     unset($_SESSION['kom']);
-                }*/
+                }
             ?>
 
 
@@ -164,7 +164,7 @@ include("scripts/header.php");
 
             <?php
 
-            include("scripts/new_order-exe.php");
+            //include("scripts/new_order-exe.php");
 
             ?>
             
@@ -172,7 +172,7 @@ include("scripts/header.php");
 
             
 
-            <form name="booking_form" id="booking_form" method="post">
+            <form name="booking_form" action="scripts/new_order-exe.php" id="booking_form" method="post">
 
                 <input type="hidden" id="booking_car_id" name="booking_car_id" value="<?php echo $result_edit['idSamochody']; ?>">
 

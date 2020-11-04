@@ -1,0 +1,198 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+}
+
+/*HEADER TOP NAV*/
+
+.header_nav{
+    width: 100%;
+    height: 7vh;
+    background-color: #69686B;
+    display: grid;
+    font-weight: 700;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 7vh;
+    grid-template-areas:
+        "nav-logo . . . . . . . . . . nav-u";
+}
+
+.hnav4 {grid-area: nav-u;}
+.header_link{color: white;text-decoration: none;display: block;}
+.hnav_element{color: white;text-align: center;margin: 20px;}
+.hnav_logo {grid-area: nav-logo;font-size: 20px;}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 7vh;
+  }
+
+  /*SECTION: OFFERS TABLE*/
+
+.offers_table{
+    margin: 100px auto;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.tab{
+    width: 80%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.row{padding: 2%;}
+.row > img{width: 200px;height: auto;}
+.bg1{background-color: #A8A6AB;}
+.tab > img{width: 300px;height: 210px;}
+.tabti{background-color: #5D5C5E;color: white;padding: 15px;}
+.offer_link{text-decoration: none;color: #69686B;}
+
+.offer_button{
+    width: 100px;
+    min-height: 30px;
+    font-size: 15px;
+    padding: 10px;
+    margin: auto;
+    background-color: #fff;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    color: #69686B;
+}
+
+/*CAR ACTION*/
+
+.car_title{
+    width: 80%;
+    min-height: 20px;
+    background-color: #69686B;
+    color: white;
+    padding: 20px;
+    margin: 100px auto 30px auto;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.success{
+    width: 80%;
+    min-height: 20px;
+    background-color: green;
+    color: white;
+    padding: 20px;
+    margin: 100px auto 5px auto;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.fail{
+    width: 80%;
+    min-height: 20px;
+    background-color: red;
+    color: white;
+    padding: 20px;
+    margin: 100px auto 5px auto;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.car_action_content{
+    min-height: 40vh;
+    background-color: #A8A6AB;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70px 1fr;
+    color: white;
+}
+
+.car_info_title{grid-column: 1/2; grid-row: 1/2; margin: auto; font-size: 20px;font-weight: 700;}
+.car_booking_title{grid-column: 2/3; grid-row: 1/2; margin: auto; font-size: 20px;font-weight: 700;}
+.car_info{grid-column: 1/2; grid-row: 2/3;}
+.car_booking{grid-column: 2/3; grid-row: 2/3;}
+textarea{resize: none;}
+.car_data{margin: 15px;}
+.car_data > label{font-weight: 700;font-size: 20px;}
+.car_data_form{
+    width: 90%;
+    padding: 10px;
+    background-color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.booking{margin: 15px;}
+.booking > label{font-weight: 700;font-size: 20px;}
+.car_booking_foto{width: 90%; height: auto; margin: 15px;}
+.car_booking_form{
+    width: 90%;
+    padding: 10px;
+    background-color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.button_wraper{
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;}
+
+.submit_button{
+    width: 100px;
+    min-height: 20px;
+    font-size: 12px;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    color: #69686B;
+    margin: 5px;
+}
+
+.deny_button{
+    width: 100px;
+    min-height: 20px;
+    font-size: 12px;
+    padding: 10px;
+    background-color: #69686B;
+    border: none;
+    font-weight: 700;
+    margin: 5px;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+}
+    
+.get_access{
+    margin: 200px auto 0 auto;
+    width: 50%;
+}
+
+.get_access > form > label{font-weight: 700;font-size: 15px; text-transform: uppercase;}
+.get_access > form > div > button{ width: 110px;}
+.get_access > form{border: solid 1px black; width: 100%; padding: 25px;}
+.input_access{
+    width: 90%;
+    padding: 10px;
+    background-color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 15px;
+}

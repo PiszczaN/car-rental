@@ -17,7 +17,8 @@ body{
         "nav-logo . . . . . . . . . . nav-u";
 }
 
-.hnav4 {grid-area: nav-u;}
+.hnav4 {grid-area: nav-u; position: relative;display: inline-block;}
+    
 .header_link{color: white;text-decoration: none;display: block;}
 .hnav_element{color: white;text-align: center;margin: 20px;}
 .hnav_logo {grid-area: nav-logo;font-size: 20px;}
@@ -26,8 +27,50 @@ body{
     position: fixed;
     top: 0;
     width: 100%;
-    min-height: 7vh;
+    min-height: 60px;
   }
+
+.hnav4:hover > .account_menu{
+    display: block;
+}
+
+.hnav4 > a{
+    color: white;
+    text-decoration: none;
+}
+
+.account_menu{
+    position: absolute;
+    z-index: 1;
+    top: 25px;
+    background-color: white;
+    min-width: 150px;
+    border: solid 1px black;
+    display: none;
+    right: 10px;
+    overflow: hidden;
+}
+
+.acc_menu_option{
+    color: black;
+    border-bottom: solid 1px black;
+    padding: 12px 0px;
+    text-decoration: none;
+    width: 100%;
+    font-weight: 500;
+    display: block;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    text-align: left;
+    font-size: 15px;
+}
+
+.acc_menu_option:nth-child(2){border-bottom: solid 2px black;}
+.acc_menu_option:last-child{border-bottom: none; color: #69686B; font-weight: 700;}
+.acc_menu_option:hover {background-color: #dfdfdf;}
+
+.dropdown:hover .dropdown-content {display: block; }
 
   /*SECTION: OFFERS TABLE*/
 

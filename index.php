@@ -18,7 +18,7 @@ include("scripts/header.php");
 
                             <thead>
 
-                                <tr>
+                                <tr class=\"table_border\">
 
                                     <th class=\"row tabti\" scope=\"col\">Numer</th>
                                     <th class=\"row tabti\" scope=\"col\">Marka</th>
@@ -44,7 +44,7 @@ include("scripts/header.php");
                             //echo $car["obrazek"];
 
                             echo "
-                            <tr>
+                            <tr class=\"table_border\">
                                 <td class=\"row bg".$i."\">".$car["idSamochody"]."</td>
                                 <td class=\"row bg".$i."\">".$car["Marka"]."</td>
                                 <td class=\"row bg".$i."\">".$car["Model"]."</td>

@@ -25,7 +25,7 @@ if(isset($_POST['booking_start']) && isset($_POST['booking_days']) && !empty($_P
     
 
 }
-else if(empty($_POST['booking_start']) && empty($_POST['booking_days'])){
+else if(empty($_POST['booking_start']) || empty($_POST['booking_days'])){
     $_SESSION["kom"] = 2;
     header('location: ../car_action.php?id='.$_POST['booking_car_id']);
     

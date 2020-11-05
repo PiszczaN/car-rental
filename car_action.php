@@ -5,40 +5,16 @@ include("scripts/header.php");
 
 ?>
 
-        <?php
+    <?php
 
-        if(isset($_GET["id"]))
-            {
-                if(!empty($_GET["id"]))
-                {
-
-                    $id = $connect -> real_escape_string($_GET["id"]);
-
-                    $sql = "SELECT * FROM samochody WHERE idSamochody = ".$id.";";
-                    $result_edit = $connect -> query($sql) -> fetch_assoc();
-
-                   /* if(!$result_edit)
-                    {
-                        $_SESSION["kom"] = 5;
-                        header('location: index.php');
-                        exit;
-                    }*/
-
-                }
-                /*else
-                {
-                    $_SESSION["kom"] = 4;
-                    header('location: index.php');
-                    exit;
-                }*/
-            }
-            /*else
-            {
-                $_SESSION["kom"] = 4;
-                header('location: index.php');
-                exit;
-            }*/
-        ?>
+        if(isset($_GET["id"])){
+            if(!empty($_GET["id"])){
+                $id = $connect -> real_escape_string($_GET["id"]);
+                $sql = "SELECT * FROM samochody WHERE idSamochody = ".$id.";";
+                $result_edit = $connect -> query($sql) -> fetch_assoc();
+            } 
+        }
+    ?>
 
         <?php
 
@@ -52,41 +28,25 @@ include("scripts/header.php");
             else
                 $klimatyzacja = "Nie posiada";
 
-
-                if(isset($_SESSION["kom"]) && !empty($_SESSION["kom"]))
-                {
-                    if($_SESSION["kom"] == 1)
-                    {
-                        ?>
-                            <div class="success">
-                                Dokonano zamówienia
-                            </div>  
-                        <?php
-                    }
-                    else if($_SESSION["kom"] == 2)
-                    {
-                       ?>
-        
-                       <div class="fail">
-                           Nie wprowadzono niezbędnych danych; daty wynajęcia oraz ilości dób wynajęcia
-                       </div>
-
-                       <?php
-                    }
-                    else if($_SESSION["kom"] == 3)
-                    {
-                       ?>
-        
-                       <div class="fail">
-                           Aby wynająć samochód w serwisie musisz być zerejestrowanym oraz zalgowanym użytkownikiem.
-                       </div>
-
-                       <?php
-                    }
-                    unset($_SESSION['kom']);
+            if(isset($_SESSION["kom"]) && !empty($_SESSION["kom"])){
+                if($_SESSION["kom"] == 1){
+                    ?>
+                        <div class="success">Dokonano zamówienia</div> 
+                    <?php
                 }
-            ?>
-
+                else if($_SESSION["kom"] == 2){
+                    ?>
+                        <div class="fail">Nie wprowadzono niezbędnych danych; daty wynajęcia oraz ilości dób wynajęcia</div>
+                    <?php
+                }
+                else if($_SESSION["kom"] == 3){
+                    ?>
+                        <div class="fail">Aby wynająć samochód w serwisie musisz być zerejestrowanym oraz zalgowanym użytkownikiem.</div>
+                    <?php
+                }
+                unset($_SESSION['kom']);
+            }
+        ?>
 
         <div class="car_title">
             <?php echo $result_edit['Marka']." ".$result_edit['Model']; ?>
@@ -159,52 +119,39 @@ include("scripts/header.php");
                     <textarea length="20" class="car_data_form" id="opis" name="opis" placeholder="<?php echo $result_edit['Opis']; ?>" disabled></textarea>
                 </div>
 
-
             </div>
-
-            <?php
-
-            //include("scripts/new_order-exe.php");
-
-            ?>
             
             <div class="car_booking">
 
-            
+                <form name="booking_form" action="scripts/new_order-exe.php" id="booking_form" method="post">
 
-            <form name="booking_form" action="scripts/new_order-exe.php" id="booking_form" method="post">
+                    <input type="hidden" id="booking_car_id" name="booking_car_id" value="<?php echo $result_edit['idSamochody']; ?>">
 
-                <input type="hidden" id="booking_car_id" name="booking_car_id" value="<?php echo $result_edit['idSamochody']; ?>">
+                    <div class="booking">
+                        <label for="booking_start">Wybierz datę wynajęcia</label><br>
+                        <input type="date" class="car_booking_form" id="booking_start" name="booking_start">
+                    </div>
 
-                <div class="booking">
-                    <label for="booking_start">Wybierz datę wynajęcia</label><br>
-                    <input type="date" class="car_booking_form" id="booking_start" name="booking_start">
-                </div>
-
-                <div class="booking">
-                    <label for="booking_days">Podaj ilość dób wynajęcia</label><br>
-                    <input type="number" class="car_booking_form" id="booking_days" name="booking_days">
-                </div>
+                    <div class="booking">
+                        <label for="booking_days">Podaj ilość dób wynajęcia</label><br>
+                        <input type="number" class="car_booking_form" id="booking_days" name="booking_days">
+                    </div>
 
 
-                <div class="button_wraper">
+                    <div class="button_wraper">
 
-                    <a href="index.php"><button type="button" class="deny_button">Wróć do listy</button></a>
-                    <button type="submit" class="submit_button">Wypożycz</button>
+                        <a href="index.php"><button type="button" class="deny_button">Wróć do listy</button></a>
+                        <button type="submit" class="submit_button">Wypożycz</button>
 
-                </div>
+                    </div>
 
-            </form>
-
-            
-
+                </form>
 
                 <img src="img\<?php echo $result_edit['Foto']; ?>" class="car_booking_foto"> 
 
             </div>
 
         </div>
-
 
     </body>
 

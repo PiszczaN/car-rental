@@ -38,7 +38,7 @@ include("scripts/access-exe.php");
         <form method="post">
 
             <label for="login">E-mail</label><br>
-            <input type="email" name="login" id="login" class="input_access" required/> <br/>
+            <input type="text" name="login" id="login" class="input_access" required/><br/>
 
             <label for="password">Hasło</label><br>
             <input type="password" name="password" name="password" class="input_access" required/><br/>

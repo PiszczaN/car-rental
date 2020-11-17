@@ -178,6 +178,10 @@ body{
     display: flex;
     justify-content: flex-end;
     width: 50%;
+    
+}
+
+.action_create > a{
     padding: 15px;
     text-decoration: none;
     color: white;
@@ -185,14 +189,13 @@ body{
 
 .car_action_content{
     min-height: 40vh;
-    background-color: #A8A6AB;
+    border: solid 1px black;
     width: 80%;
     margin: auto;
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 70px 1fr;
-    color: white;
 }
 
 .car_info_title{grid-column: 1/2; grid-row: 1/2; margin: auto; font-size: 20px;font-weight: 700;}
@@ -255,7 +258,7 @@ textarea{resize: none;}
 }
     
 .get_access{
-    margin: 150px auto 0 auto;
+    margin: 150px auto 30px auto;
     width: 50%;
 }
 
@@ -318,3 +321,9 @@ textarea{resize: none;}
 
 .content_info{margin-top: 15px;}
 .content_info_input{background-color: white; padding: 5px; width: 95%;}
+
+.form_title{
+    text-transform: uppercase;
+    border-bottom: solid 1px black;
+    padding: 0px 5px 15px 5px;
+}

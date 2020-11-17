@@ -41,7 +41,9 @@ include("scripts/header.php");
     ?>
             <div class="action">
                 <a href="administration_panel.php" class="action_back"><- Wróć do panelu</a>
-                <a href="new_employee.php" class="action_create">+ Utwórz nowego pracownika</a>
+                <div class="action_create">
+                    <a href="new_employee.php" >+ Utwórz nowego pracownika</a>
+                </div>
             </div>
             <section class="table">
     <?php
@@ -75,6 +77,8 @@ include("scripts/header.php");
                             </tr>";$i++;
                     }
                     echo "</table></section>";
+                }else{
+                    echo "<h1>Nie ma jeszcze żadnych pracowników</h1>";
                 }
             
         }

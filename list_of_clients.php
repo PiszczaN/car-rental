@@ -41,6 +41,8 @@ include("scripts/header.php");
                             </tr>";$i++;
                     }
                     echo "</table></section>";
+                }else{
+                    echo "<h1>Nie ma jeszcze żadnych klientów</h1>";
                 }
             
         }

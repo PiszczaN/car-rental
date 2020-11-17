@@ -140,8 +140,8 @@ include("scripts/header.php");
 
                     <div class="button_wraper">
 
-                        <a href="index.php"><button type="button" class="deny_button">Wróć do listy</button></a>
-                        <button type="submit" class="submit_button">Wypożycz</button>
+                        <a href="index.php"><button type="button" class="submit_button">Wróć do listy</button></a>
+                        <button type="submit" class="deny_button">Wypożycz</button>
 
                     </div>
 

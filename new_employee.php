@@ -14,6 +14,8 @@ include("scripts/new_employee-exe.php");
     <div class="get_access">
         <form method="post">
 
+            <h2 class="form_title">Utwórz pracownika</h2>
+
             <label for="Imie">Imię</label><br>
             <input type="text" name="Imie" id="Imie" class="input_access" required/> <br/>
 

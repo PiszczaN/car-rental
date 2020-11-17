@@ -74,7 +74,7 @@ body{
 
   /*SECTION: OFFERS TABLE*/
 
-.offers_table{
+.table{
     margin: 100px auto;
     min-height: 10vh;
     display: flex;
@@ -87,8 +87,7 @@ body{
     border-collapse: separate;
     border-spacing: 0 15px;
     text-align: center;
-    font-weight: 600;
-    
+    font-weight: 600;   
 }
 
 .table_border{ outline: solid 1px black;}
@@ -98,7 +97,7 @@ body{
 .bg1{background-color: #fff;}
 
 .offer_link{text-decoration: none;color: #69686B;}
-.row{padding: 0;}
+.row{padding: 10px;}
 .tabti{background-color: #5D5C5E;color: white;padding: 15px;}
 .offer_button{
     min-width: 100px;
@@ -136,7 +135,7 @@ body{
     background-color: green;
     color: white;
     padding: 20px;
-    margin: 100px auto 5px auto;
+    margin: 100px auto -80px auto;
     font-size: 25px;
     font-weight: 700;
     text-align: center;
@@ -148,10 +147,40 @@ body{
     background-color: red;
     color: white;
     padding: 20px;
-    margin: 100px auto 5px auto;
+    margin: 100px auto -80px auto;
     font-size: 25px;
     font-weight: 700;
     text-align: center;
+}
+
+.action{
+    width: 80%;
+    margin: 100px auto -80px auto;
+    background-color: gray;
+    min-height: 30px;
+    color: white;
+    display: flex;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+}
+
+.action_back{
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.action_create{
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
 }
 
 .car_action_content{
@@ -212,7 +241,7 @@ textarea{resize: none;}
 }
 
 .deny_button{
-    min-width: 100px;
+    min-width: 110px;
     min-height: 20px;
     font-size: 12px;
     padding: 10px;
@@ -226,7 +255,7 @@ textarea{resize: none;}
 }
     
 .get_access{
-    margin: 200px auto 0 auto;
+    margin: 150px auto 0 auto;
     width: 50%;
 }
 

@@ -4,7 +4,7 @@ include("config/config.inc.php");
 include("scripts/header.php");
 
 ?>
-        <section class="offers_table">
+        <section class="table">
             <?php
                 $t_cars_query = "SELECT idSamochody, Marka, Model, Cena, Foto FROM samochody;";
                 $t_cars = mysqli_query($connect, $t_cars_query);

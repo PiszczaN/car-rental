@@ -40,6 +40,7 @@ if(isset($_SESSION["change_pass_result"]) && !empty($_SESSION["change_pass_resul
     }
     unset($_SESSION['change_pass_result']);
 }
+       
 
 ?>
 
@@ -50,10 +51,10 @@ if(isset($_SESSION["change_pass_result"]) && !empty($_SESSION["change_pass_resul
             <h2 class="panel_title">Panel Zarządzania</h2>
 
             <a href="#" class="panel_option pan_opt1"><b>Moje Konto</b></a>
-            <a href="#" class="panel_option pan_opt2">Lista Pracowników</a>
-            <a href="#" class="panel_option pan_opt3">Lista Klientów</a>
-            <a href="#" class="panel_option pan_opt4">Lista Zamówień</a>
-            <a href="#" class="panel_option pan_opt5">Lista Obowiązków</a>
+            <a href="list_of_employee.php" class="panel_option pan_opt2">Lista Pracowników</a>
+            <a href="list_of_clients.php" class="panel_option pan_opt3">Lista Klientów</a>
+            <a href="list_of_orders.php" class="panel_option pan_opt4">Lista Zamówień</a>
+            <a href="list_of_duty.php" class="panel_option pan_opt5">Lista Obowiązków</a>
             <a href="index.php" class="panel_option pan_opt6">Strona Główna</a>
 
             <a href="scripts/logout-exe.php" class="panel_option pan_opt7">Wyloguj się</a>

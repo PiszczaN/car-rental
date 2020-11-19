@@ -11,6 +11,10 @@ include("scripts/header.php");
 ?>
             <div class="success">Przyjęto zamówienie poprawnie</div> 
 <?php
+        } if($_SESSION["Morder"] == 2){
+?>
+            <div class="success">Odrzucono zamówienie poprawnie</div> 
+<?php
         }
     }
     unset($_SESSION["Morder"]);
@@ -62,7 +66,10 @@ include("scripts/header.php");
                                 <td class=\"row\">".$order["Data_Wydania"]."</td>
                                 <td class=\"row\">".$order["Data_Odebrania"]."</td>
                                 <td class=\"row\">".$order["samochod"]."</td>
-                                <td class=\"row\"><a class=\"offer_link\" href='scripts/confirm_order-exe.php?id=".$order['idZamowienia']."'><button class=\"offer_button\">PRZYJMIJ</button></a></td>
+                                <td class=\"row\">
+                                    <a class=\"offer_link\" href='scripts/deny_order-exe.php?id=".$order['idZamowienia']."'><button class=\"deny_button\">ODRZUĆ</button></a>
+                                    <a class=\"offer_link\" href='scripts/confirm_order-exe.php?id=".$order['idZamowienia']."'><button class=\"deny_button\">PRZYJMIJ</button></a>
+                                </td>
 
                             </tr>";
                     }

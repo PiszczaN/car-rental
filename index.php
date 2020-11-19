@@ -29,15 +29,27 @@ include("scripts/header.php");
                                 $car["Foto"] = "niema.png";
                             }
                             //echo $car["obrazek"];
-                            echo "
-                            <tr class=\"table_border\">
-                                <td class=\"row bg".$i."\">".$car["idSamochody"]."</td>
-                                <td class=\"row bg".$i."\">".$car["Marka"]."</td>
-                                <td class=\"row bg".$i."\">".$car["Model"]."</td>
-                                <td class=\"row bg".$i."\">".$car["Cena"]."</td>
-                                <td class=\"row bg".$i."\"><img src=\"img\\".$car["Foto"]."\"></td>
-                                <td class=\"row bg".$i."\"><a class=\"offer_link\" href='car_action.php?id=".$car['idSamochody']." '><button class=\"offer_button\">ZOBACZ</button></a></td>
-                            </tr>";
+            ?>
+                            <tr class="table_border">
+                                <td class="row"><?php echo $car["idSamochody"] ?></td>
+                                <td class="row"><?php echo $car["Marka"] ?></td>
+                                <td class="row"><?php echo $car["Model"] ?></td>
+                                <td class="row"><?php echo $car["Cena"] ?></td>
+                                <td class="row"><img src="img/<?php echo $car["Foto"] ?>"></td>
+            <?php 
+                                if($_SESSION["user_type"] == "client"){
+            ?>
+                                <td class="row"><a class="offer_link" href="car_action.php?id=<?php echo $car['idSamochody'] ?>"><button class="offer_button">ZOBACZ</button></a></td>
+            <?php 
+                                }
+                                else if($_SESSION["user_type"] == "employee"){
+            ?>
+                                <td class="row"><a class="offer_link" href="car_action.php?id=<?php echo $car['idSamochody'] ?>"><button class="offer_button">EDYTUJ</button></a></td>
+            <?php 
+                                }
+            ?>
+                            </tr>
+            <?php
                     }
                     echo "</table>";
                 }

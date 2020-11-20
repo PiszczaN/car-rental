@@ -210,7 +210,7 @@ textarea{resize: none;}
     padding: 10px;
     background-color: white;
     font-weight: 700;
-    text-transform: uppercase;
+    
 }
 
 .booking{margin: 15px;}
@@ -221,8 +221,11 @@ textarea{resize: none;}
     padding: 10px;
     background-color: white;
     font-weight: 700;
-    text-transform: uppercase;
+   
 }
+
+
+
 .button_wraper{
     width: 90%;
     padding: 10px;
@@ -256,6 +259,11 @@ textarea{resize: none;}
     cursor: pointer;
     color: #fff;
 }
+
+.del_button{
+    background-color: red;
+    color: white;
+}
     
 .get_access{
     margin: 150px auto 30px auto;
@@ -270,7 +278,6 @@ textarea{resize: none;}
     padding: 10px;
     background-color: white;
     font-weight: 700;
-    text-transform: uppercase;
     margin: 15px;
 }
 

@@ -123,9 +123,16 @@ include("scripts/header.php");
             
             <div class="car_booking">
 
+                <img src="img\<?php echo $result_edit['Foto']; ?>" class="car_booking_foto"> 
+
                 <form name="booking_form" action="scripts/new_order-exe.php" id="booking_form" method="post">
 
                     <input type="hidden" id="booking_car_id" name="booking_car_id" value="<?php echo $result_edit['idSamochody']; ?>">
+
+                    <div class="booking">
+                        <label for="paliwo">Cena za dobę (zł)</label><br>
+                        <input type="text" class="car_data_form" id="Cena" name="Cena" placeholder="" value="<?php echo $result_edit['Cena']; ?>" disabled>
+                    </div>
 
                     <div class="booking">
                         <label for="booking_start">Wybierz datę wynajęcia</label><br>
@@ -137,7 +144,6 @@ include("scripts/header.php");
                         <input type="number" class="car_booking_form" id="booking_days" name="booking_days">
                     </div>
 
-
                     <div class="button_wraper">
 
                         <a href="index.php"><button type="button" class="submit_button">Wróć do listy</button></a>
@@ -147,7 +153,7 @@ include("scripts/header.php");
 
                 </form>
 
-                <img src="img\<?php echo $result_edit['Foto']; ?>" class="car_booking_foto"> 
+                
 
             </div>
 

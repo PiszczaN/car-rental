@@ -10,8 +10,9 @@
         ?>
                     <div class="account_menu">
 
-                        <a href="#" class="acc_menu_option">Moje Konto</a>
-                        <a href="#" class="acc_menu_option">Zamówienia</a>
+                        <a href="client_panel.php" class="acc_menu_option">Moje Konto</a>
+                        <a href="client_orders_list.php" class="acc_menu_option">Zamówienia</a>
+                        <a href="index.php" class="acc_menu_option">Strona startowa</a>
                         <a href="scripts/logout-exe.php" class="acc_menu_option">Wyloguj się</a>
 
                     </div>
@@ -23,6 +24,7 @@
 
                         <a href="administration_panel.php" class="acc_menu_option">Moje Konto</a>
                         <a href="administration_panel.php" class="acc_menu_option">Panel Zarządzania</a>
+                        <a href="index.php" class="acc_menu_option">Strona startowa</a>
                         <a href="scripts/logout-exe.php" class="acc_menu_option">Wyloguj się</a>
 
                     </div>

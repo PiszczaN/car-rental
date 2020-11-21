@@ -66,8 +66,8 @@ body{
     font-size: 15px;
 }
 
-.acc_menu_option:nth-child(2){border-bottom: solid 2px black;}
-.acc_menu_option:last-child{border-bottom: none; color: #69686B; font-weight: 700;}
+
+.acc_menu_option:last-child{border-bottom: none; color: #69686B; font-weight: 700;border-top: solid 2px black;}
 .acc_menu_option:hover {background-color: #dfdfdf;}
 
 .dropdown:hover .dropdown-content {display: block; }
@@ -264,6 +264,8 @@ textarea{resize: none;}
     background-color: red;
     color: white;
 }
+
+
     
 .get_access{
     margin: 150px auto 30px auto;
@@ -328,6 +330,9 @@ textarea{resize: none;}
 
 .content_info{margin-top: 15px;}
 .content_info_input{background-color: white; padding: 5px; width: 95%;}
+
+.row_action{display: inline-block; width: 25%;}
+.action_button{width: 20%; display: inline-block;}
 
 .form_title{
     text-transform: uppercase;

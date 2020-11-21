@@ -24,6 +24,19 @@
                         exit;
                     }
 
+                    if($result){
+                        $connect -> close();
+                        $_SESSION["change_pass_result"] = 1;
+                        header('location: administration_panel.php');
+                        exit;
+                    }
+                    else{
+                        $connect -> close();
+                        $_SESSION["change_pass_result"] = 2;
+                        header('location: administration_panel.php');
+                        exit;
+                    }
+
                 }
                 else if($_SESSION['user_type'] == "client"){
 
@@ -38,31 +51,36 @@
                     else{
                         $connect -> close();
                         $_SESSION["change_pass_result"] = 4;
-                        header('location: administration_panel.php');
+                        header('location: client_panel.php');
+                        exit;
+                    }
+
+                    if($result){
+                        $connect -> close();
+                        $_SESSION["change_pass_result"] = 1;
+                        header('location: client_panel.php');
+                        exit;
+                    }
+                    else{
+                        $connect -> close();
+                        $_SESSION["change_pass_result"] = 2;
+                        header('location: client_panel.php');
                         exit;
                     }
                 }
 
-                if($result){
-                    $connect -> close();
-                    $_SESSION["change_pass_result"] = 1;
-                    header('location: administration_panel.php');
-                    exit;
-                }
-                else{
-                    $connect -> close();
-                    $_SESSION["change_pass_result"] = 2;
-                    header('location: administration_panel.php');
-                    exit;
-                }
-            
         }
-        else if($_POST['new_password'] != $_POST['new_password_check']){
+        else if($_POST['new_password'] != $_POST['new_password_check'] && $_SESSION['user_type'] == "employee"){
             $connect -> close();
             $_SESSION["change_pass_result"] = 3;
             header('location: administration_panel.php');
             exit;
-        }         
+        }else if($_POST['new_password'] != $_POST['new_password_check'] && $_SESSION['user_type'] == "client"){
+            $connect -> close();
+            $_SESSION["change_pass_result"] = 3;
+            header('location: client_panel.php');
+            exit;
+        }                  
     }
 
 ?>

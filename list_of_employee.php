@@ -47,7 +47,7 @@ include("scripts/header.php");
             </div>
             <section class="table">
     <?php
-            $t_employee_query = "SELECT Imie, Nazwisko, Stanowisko, Nr_Telefonu, Email FROM pracownicy;";
+            $t_employee_query = "SELECT idPracownicy, CONCAT(Imie,' ',Nazwisko) as Imie, Stanowisko, Nr_Telefonu, Email FROM pracownicy;";
                 $t_employee = mysqli_query($connect, $t_employee_query);
                 if(mysqli_num_rows($t_employee) > 0){
                     echo "
@@ -57,7 +57,6 @@ include("scripts/header.php");
                                 <tr class=\"table_border\">
                                     <th class=\"row tabti\" scope=\"col\">Numer</th>
                                     <th class=\"row tabti\" scope=\"col\">Imie</th>
-                                    <th class=\"row tabti\" scope=\"col\">Nazwisko</th>
                                     <th class=\"row tabti\" scope=\"col\">Stanowisko</th>
                                     <th class=\"row tabti\" scope=\"col\">Numer Telefonu</th>
                                     <th class=\"row tabti\" scope=\"col\">Email</th>
@@ -69,8 +68,7 @@ include("scripts/header.php");
                             echo "
                             <tr class=\"table_border\">
                                 <td class=\"row\">".$i."</td>
-                                <td class=\"row\">".$employee["Imie"]."</td>
-                                <td class=\"row\">".$employee["Nazwisko"]."</td>
+                                <td class=\"row\">".$employee["Imie"]." (#".$employee["idPracownicy"].")</td>
                                 <td class=\"row\">".$employee["Stanowisko"]."</td>
                                 <td class=\"row\">".$employee["Nr_Telefonu"]."</td>
                                 <td class=\"row\">".$employee["Email"]."</td>

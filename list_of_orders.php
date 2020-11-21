@@ -34,7 +34,7 @@ include("scripts/header.php");
 
             <section class="table">
     <?php
-            $t_orders_query = 'SELECT z.idZamowienia, CONCAT(k.Imie," ",k.Nazwisko) AS Imie, z.Data_Zlozenia, z.Data_Wydania, z.Data_Odebrania, CONCAT(s.Marka," ", s.Model) as samochod FROM zamowienia z
+            $t_orders_query = 'SELECT k.idKlienci, z.idZamowienia, CONCAT(k.Imie," ",k.Nazwisko) AS Imie, z.Data_Zlozenia, z.Data_Wydania, z.Data_Odebrania, CONCAT(s.Marka," ", s.Model) as samochod FROM zamowienia z
             inner join klienci k on(z.Klienci_idKlienci=k.idKlienci)
             inner join samochody s on(z.Samochody_idSamochody=s.idSamochody)
             WHERE z.Przyjete = 0 AND z.Odrzucone = 0;';
@@ -61,7 +61,7 @@ include("scripts/header.php");
                             echo "
                             <tr class=\"table_border\">
                                 <td class=\"row\">".$order["idZamowienia"]."</td>
-                                <td class=\"row\">".$order["Imie"]."</td>
+                                <td class=\"row\">".$order["Imie"]." (#".$order["idKlienci"].")</td>
                                 <td class=\"row\">".$order["Data_Zlozenia"]."</td>
                                 <td class=\"row\">".$order["Data_Wydania"]."</td>
                                 <td class=\"row\">".$order["Data_Odebrania"]."</td>

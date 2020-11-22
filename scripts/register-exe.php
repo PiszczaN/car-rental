@@ -16,8 +16,8 @@
 
                 $Hashed_Password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-                $sql = "INSERT INTO klienci(`Imie`,`Nazwisko`,`Nr_Telefonu`,`Email`,`Haslo`)
-                VALUES ('".$_POST['Imie']."','".$_POST['Nazwisko']."','".$_POST['Nr_Telefonu']."','".$_POST['login']."','".$Hashed_Password."')";
+                $sql = "INSERT INTO klienci(`Imie`,`Nazwisko`,`Nr_Telefonu`,`Email`,`Haslo`,`Znizka`)
+                VALUES ('".$_POST['Imie']."','".$_POST['Nazwisko']."','".$_POST['Nr_Telefonu']."','".$_POST['login']."','".$Hashed_Password."','0')";
                 $result = $connect -> real_query($sql);
 
                 if($result){

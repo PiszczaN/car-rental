@@ -123,7 +123,7 @@ include("scripts/header.php");
             
             <div class="car_booking">
 
-                <img src="img\<?php echo $result_edit['Foto']; ?>" class="car_booking_foto"> 
+                <img src="img\<?php if($result_edit["Foto"] == NULL){echo "default.jpeg";}else{echo $result_edit['Foto'];} ?>" class="car_booking_foto"> 
 
                 <form name="booking_form" action="scripts/new_order-exe.php" id="booking_form" method="post">
 
@@ -141,7 +141,7 @@ include("scripts/header.php");
 
                     <div class="booking">
                         <label for="booking_days">Podaj ilość dób wynajęcia</label><br>
-                        <input type="number" class="car_booking_form" id="booking_days" name="booking_days">
+                        <input type="number" min="0" max="31" class="car_booking_form" id="booking_days" name="booking_days">
                     </div>
 
                     <div class="button_wraper">

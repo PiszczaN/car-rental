@@ -37,7 +37,7 @@ include("scripts/header.php");
             $t_orders_query = 'SELECT k.idKlienci, z.idZamowienia, CONCAT(k.Imie," ",k.Nazwisko) AS Imie, z.Data_Zlozenia, z.Data_Wydania, z.Data_Odebrania, CONCAT(s.Marka," ", s.Model) as samochod FROM zamowienia z
             inner join klienci k on(z.Klienci_idKlienci=k.idKlienci)
             inner join samochody s on(z.Samochody_idSamochody=s.idSamochody)
-            WHERE z.Przyjete = 0 AND z.Odrzucone = 0;';
+            WHERE z.Przyjete = 0 AND z.Odrzucone = 0 ORDER BY z.Data_Zlozenia DESC;;';
 
                 $t_orders = mysqli_query($connect, $t_orders_query);
                 if(mysqli_num_rows($t_orders) > 0){

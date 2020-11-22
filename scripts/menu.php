@@ -1,7 +1,7 @@
 
 <nav class="header_nav sticky">
 
-    <div class="hnav_element hnav_logo"><span style="color: #444345; background-color: white;">Car</span>Rental</div>
+    <div class="hnav_element hnav_logo"><a href="index.php" style="text-decoration: none; color: white;"><span style="color: #444345; background-color: white;">Car</span>Rental</a></div>
     <div class="hnav_element hnav4">
         <?php
             if(isset($_SESSION['user']) && !empty($_SESSION['user'])){ 

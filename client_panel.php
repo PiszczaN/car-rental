@@ -14,6 +14,10 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] == "client"){
         $id = $connect -> real_escape_string($_SESSION['id']);
         $sql = "SELECT * FROM klienci WHERE idKlienci = ".$id.";";
         $result_edit = $connect -> query($sql) -> fetch_assoc();
+
+        $znizka = $result_edit["Znizka"]."%";
+
+        if($result_edit["Znizka"] == 0){$znizka = "brak";}
     } 
 }
 
@@ -80,6 +84,11 @@ if(isset($_SESSION["change_pass_result"]) && !empty($_SESSION["change_pass_resul
                 <div class="content_info">
                     <label for="Nr_Telefonu">Numer Telefonu</label><br>
                     <input type="text" class="content_info_input" id="Nr_Telefonu" name="Nr_Telefonu" placeholder="" value="<?php echo $result_edit['Nr_Telefonu']; ?>" disabled>
+                </div>
+
+                <div class="content_info">
+                    <label for="Nr_Telefonu">Rabat</label><br>
+                    <input type="text" class="content_info_input" id="Znizka" name="Znizka" placeholder="" value="<?php echo $znizka; ?>" disabled>
                 </div>
 
                 <p style="color: gray;"> (i) Jeżeli, wprowadzone dane są nieprawidłowe; skontaktuj się z obsługą klienta</p>

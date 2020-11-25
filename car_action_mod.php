@@ -97,7 +97,7 @@ include("scripts/header.php");
                 </div>
 
                 <div class="car_data">
-                    <label for="skrzynia_automat">Skrzynia biegów</label><br>
+                    <label for="rmanual">Skrzynia biegów</label><br>
                         <div>
                             <input type="radio" id="rmanual" name="skrzynia_automat" value="0" <?php if($result_edit['Skrzynia_Automat'] == 0){echo "checked";}?>>
                             <label for="rmanual">Manual</label>
@@ -111,7 +111,7 @@ include("scripts/header.php");
                 </div>
 
                 <div class="car_data">
-                    <label for="klimatyzacja">Klimatyzacja</label><br>
+                    <label for="e_klim">Klimatyzacja</label><br>
                         <div>
                             <input type="radio" id="e_klim" name="klimatyzacja" value="1" <?php if($result_edit['Klimatyzacja'] == 1){echo "checked";}?>>
                             <label for="e_klim">Zainstalowana</label>

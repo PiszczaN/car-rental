@@ -18,9 +18,36 @@ include("scripts/header.php");
             <div class="action">
                 <a href="administration_panel.php" class="action_back"><- Wróć do panelu</a>
             </div>
+
+            <form class="action" method="post" action="list_of_clients.php">
+                <input class="form-control" type="search" name="search" placeholder="Wyszukaj" aria-label="Search">
+                <button class="submit_button" type="submit">Szukaj</button>
+            </form>
+
             <section class="table">
     <?php
             $t_clients_query = "SELECT idKlienci, CONCAT(Imie,' ',Nazwisko) as Imie, Nr_Telefonu, Email, Znizka FROM klienci;";
+
+            if(isset($_POST["search"]))
+            {
+                $search_array = str_split($_POST['search']);
+
+            if($search_array[0] != "#"){
+                    //SZUKANIE PO INNYCH WARTOŚCIACH
+                    $_POST["search"] = "%".$_POST["search"]."%";
+                    $t_clients_query = "SELECT idKlienci, CONCAT(Imie,' ',Nazwisko) as Imie, Nr_Telefonu, Email, Znizka FROM klienci
+                    WHERE (Imie LIKE '".$_POST['search']."') OR (Nr_Telefonu LIKE '".$_POST['search']."') OR (Email LIKE '".$_POST['search']."') OR (Nazwisko LIKE '".$_POST['search']."')";
+
+                }else if($search_array[0] == "#"){
+                    //SZUKANIE PO ID
+                    array_shift($search_array);
+                    $search_id = implode("", $search_array);
+
+                    $_POST["search"] = "%".$_POST["search"]."%";
+                    $t_clients_query = "SELECT idKlienci, CONCAT(Imie,' ',Nazwisko) as Imie, Nr_Telefonu, Email, Znizka FROM klienci
+                    WHERE (idKlienci LIKE '".$search_id."')";
+                }
+            }
                 $t_clients = mysqli_query($connect, $t_clients_query);
                 if(mysqli_num_rows($t_clients) > 0){
                     echo "

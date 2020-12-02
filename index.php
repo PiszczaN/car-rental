@@ -31,13 +31,13 @@ if($_SESSION["user_type"] == "employee"){
                 </div>
             </div>
 
+<?php
+}
+?>
             <form class="action" method="post" action="index.php">
                 <input class="form-control" type="search" name="search" placeholder="Wyszukaj" aria-label="Search">
                 <button class="submit_button" type="submit">Szukaj</button>
             </form>
-<?php
-}
-?>
         <section class="table">
             <?php
                 $t_cars_query = "SELECT idSamochody, Marka, Model, Cena, Foto FROM samochody;";

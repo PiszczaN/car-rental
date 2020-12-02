@@ -14,7 +14,7 @@
                 $_SESSION['id'] = $access['idKlienci'];
                 $_SESSION['user_name'] = $access['Imie'];
                 $_SESSION['user_type'] = "client";
-                header("Location: http://localhost/CarRental/");
+                header("Location: index.php");
             }
         }
         else if($login_array[0] == "@"){
@@ -31,7 +31,7 @@
                 $_SESSION['id'] = $access['idPracownicy'];
                 $_SESSION['user_name'] = $access['Imie'];
                 $_SESSION['user_type'] = "employee";
-                header("Location: http://localhost/CarRental/");
+                header("Location: index.php");
             }
         }
 
